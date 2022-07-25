@@ -2,7 +2,8 @@
  Emacs Fuzzy Finder
 ====================
 
-.. img:: ezf-example-optimised.gif
+.. figure:: ezf-example-optimised.gif
+   :width: 400px
 
 Emacs Fuzzy Finder is like `fzf <https://github.com/junegunn/fzf>`__, but it leverages the power of your Emacs instance to filter and select candidates.
 
