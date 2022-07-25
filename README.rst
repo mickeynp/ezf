@@ -15,3 +15,9 @@ Here's an example::
 
 This will search Debian's package repository for anything with the word ``emacs`` in it -- yielding hundreds of results. They're then passed to ``ezf`` and you're asked to filter and select candidates inside your own Emacs. The ones you select are sent *back* to the shell, and substituted into the call to ``apt-get``.
 
+How to Install
+==============
+
+1. Git clone the repo
+2. Put ``ezf`` somewhere in your ``PATH``.
+3. Load ``ezf.el``.
