@@ -15,6 +15,8 @@ Here's an example::
 
 This will search Debian's package repository for anything with the word ``emacs`` in it -- yielding hundreds of results. They're then passed to ``ezf`` and you're asked to filter and select candidates inside your own Emacs. The ones you select are sent *back* to the shell, and substituted into the call to ``apt-get``.
 
+To better understand how and why it works the way it does, you can read my article `Fuzzy Finding with Emacs instead of fzf <https://www.masteringemacs.org/article/fuzzy-finding-emacs-instead-of-fzf>`__.
+
 How to Install
 ==============
 
