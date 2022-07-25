@@ -20,7 +20,7 @@ done
 shift $(( OPTIND - 1 ))
 OPTIND=1
 
-ezftmp="$(mktemp --suffix emacs)"
+ezftmp="$(mktemp)"
 trap 'rm -f -- "$ezftmp"' EXIT
 > "$ezftmp" cat -
 # xargs is there to strip the "" from the beginning and end of the output from Emacs.
