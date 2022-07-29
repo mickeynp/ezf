@@ -82,7 +82,7 @@
                              (end (cadr field))
                              (split (split-string
                                      candidate ezf-separators t " "))
-                             (len )
+                             (len (length split))
                              (lst (nthcdr beg split)))
                         (if (and end
                                  (< (setq end (string-to-number end)) len))
