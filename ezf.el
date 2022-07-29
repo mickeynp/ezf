@@ -74,7 +74,7 @@
   (mapconcat (lambda (candidate)
                (cond ((numberp field)
                       ;; The field column of line.
-                      (shell-quote-argument
+                      (identity
                        (nth (1- field)
                             (split-string candidate ezf-separators t " "))))
                      ((consp field)
@@ -87,11 +87,11 @@
                         (if (and end
                                  (< (setq end (string-to-number end)) len))
                             ;; The line part from beg to end.
-                            (mapconcat 'shell-quote-argument
+                            (mapconcat 'identity
                                        (nbutlast lst (1- (- len end)))
                                        " ")
                           ;; The line part from beg to eol.
-                          (mapconcat 'shell-quote-argument lst " "))))
+                          (mapconcat 'identity lst " "))))
                      ;; The whole line.
                      (t candidate)))
              candidates
