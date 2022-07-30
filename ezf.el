@@ -46,6 +46,8 @@
 
 ;;; Code:
 
+(require 'helm-core)
+
 (defun ezf-default (filename)
   "Complete candidates in FILENAME with `completing-read'."
   (completing-read-multiple

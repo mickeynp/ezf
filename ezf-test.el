@@ -5,6 +5,6 @@
         (test4 (ezf-1 '("1071 helmcd -nw") "1,2"))
         (test4 (ezf-1 '("1071 helmcd -nw") "2")))
     (should (string= test1 "autodep8"))
-    (should (string= test2 "g\\én\\érateur de fichiers"))
+    (should (string= test2 "générateur de fichiers"))
     (should (string= test3 "helmcd -nw"))
     (should (string= test4 "helmcd"))))
