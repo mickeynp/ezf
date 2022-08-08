@@ -69,15 +69,16 @@
   "Regexp of separators `ezf' should use to split a line.")
 
 (defun ezf-1 (candidates &optional field)
-  (setq field
-        (if (and (stringp field) (string-match "," field))
-            (split-string field "," t)
-          (string-to-number field)))
+  (when field
+    (setq field
+          (if (and (stringp field) (string-match "," field))
+              (split-string field "," t)
+            (string-to-number field))))
   (mapconcat (lambda (candidate)
                (cond ((numberp field)
                       ;; The field column of line.
                       (identity
-                       (nth (1- field)
+                       (nth field
                             (split-string candidate ezf-separators t " "))))
                      ((consp field)
                       (let* ((beg (string-to-number (car field)))
