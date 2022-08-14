@@ -71,8 +71,8 @@
 (defun ezf-1 (candidates &optional field)
   (when field
     (setq field
-          (if (and (stringp field) (string-match "," field))
-              (split-string field "," t)
+          (if (and (stringp field) (string-match "-" field))
+              (split-string field "-" t)
             (string-to-number field))))
   (mapconcat (lambda (candidate)
                (cond ((numberp field)
@@ -105,7 +105,7 @@
 
 Optionally split each line of string by `ezf-separators' if FIELD
 is non-nil and return FIELD.  FIELD can be specified as a range of
-columns like \"1,\" or \"1,6\", otherwise it is specified as a string
+columns like \"1-\" or \"1-6\", otherwise it is specified as a string
 representing an integer e.g. \"1\".
 
 If COMPLETING-FN is nil default to `ezf-default'."

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -o nounset -o errexit -o pipefail
 
-field=nil
+field=0-
 # the elisp function to use for completing read
 candidate_fn=ezf-default
 while getopts c:f: OPT; do
