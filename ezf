@@ -23,10 +23,13 @@ OPTIND=1
 ezftmp="$(mktemp)"
 trap 'rm -f -- "$ezftmp"' EXIT
 > "$ezftmp" cat -
-# xargs is there to strip the "" from the beginning and end of the output from Emacs.
-selection=$(emacsclient -e "(ezf \"$ezftmp\" $field #'$candidate_fn)" | xargs)
+# xargs is there to strip the "" from the beginning and end of the
+# output from Emacs.  Ensure "field" is always passed as a string by
+# quoting it.
+selection=$(emacsclient -e "(progn (require 'ezf) (ezf \"$ezftmp\" \"$field\" #'$candidate_fn))" | xargs)
 if [[ "$selection" == "nil" ]]; then
     exit 1
 else
    echo "$selection"
 fi
+
