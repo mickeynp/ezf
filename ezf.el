@@ -1,4 +1,5 @@
 ;;; ezf.el --- emacs fuzzy finder                    -*- lexical-binding: t; -*-
+;; Version: 0.0.0-git
 
 ;; Copyright (C) 2022  Mickey Petersen
 
